@@ -1,0 +1,71 @@
+<!--magnific popup-->
+
+<form class="white-popup-block mfp-hide" action="mialchimp" method="post" id="mailchimp" name="mc-embedded-subscribe-form" target="_blank" >
+      <h1></h1>
+        <fieldset style="border:0;">
+          <div class="fnws-left">
+            <p class="title" >Mailing List...</p>
+			<p>Join our mailing list to receive on new products, styling</p>
+			<p>ideas, offer and much more. If you don't want to miss a thing, join us today</p>
+          </div>
+          <div class="fnws-right">
+              <ul>
+                      <li>
+                        <label for="email">Email</label>
+                        <input type="email" value="" required="" placeholder="Email Address" name="EMAIL" id="mail" class="nwsletter" />
+                      </li>
+                      <li>
+                        <label for="name">first Name</label>
+                        <input type="text" required="" placeholder="First Name" name="FNAME" id="FNAME" class="nwsletter">
+                      </li>
+                      <li>
+                        <label for="name">Last Name</label>
+                        <input type="text" required="" placeholder="Last Name" name="LNAME" id="LNAME" class="nwsletter">
+                      </li>
+                      <li>
+                        <input type="submit" class="btn newsletter" value="Subscribe" name="subscribe" id="subscribe" />
+                      </li>
+                      <!--
+<li>   
+                        <label for="phone">Phone</label>
+                        <input type="tel" required="" placeholder="Eg. +447500000000" name="phone" id="phone">
+                      </li>
+                      <li>
+                        <label for="textarea">Textarea</label><br>
+                        <textarea id="textarea">Try to resize me to see how popup CSS-based resizing works.</textarea>
+                      </li>-->
+                </ul>
+          </div>
+        </fieldset>
+</form>
+<!--magnific popup end-->
+  
+<script type="text/javascript">
+jQuery(document).ready(function(){
+
+  jQuery('.popup-with-form').magnificPopup({
+      type: 'inline',
+      preloader: false,
+      focus: '#mail',
+      // When elemened is focused, some mobile browsers in some cases zoom in
+      // It looks not nice, so we disable it:
+      callbacks: {
+      beforeOpen: function() {
+              if(jQuery(window).width() < 700) {
+                  this.st.focus = false;
+              } else {
+                  this.st.focus = '#mail';
+              }
+          }
+      }
+  });
+    
+  jQuery( "#mailchimp" ).submit(function( event ) {
+    //alert( "Handler for .submit() called." );
+    //event.preventDefault();
+    setTimeout(function(){jQuery('button.mfp-close').trigger('click');},300); 
+  });
+})
+  
+</script>
+<!--magnific popup end-->
